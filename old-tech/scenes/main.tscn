@@ -23,13 +23,30 @@ position = Vector2(996, 507)
 process_mode = 3
 script = ExtResource("5_tbgi4")
 
-[node name="Timer" type="Timer" parent="." unique_id=1916303493]
+[node name="GameTime" type="Timer" parent="." unique_id=1916303493]
 one_shot = true
 
-[node name="Label" type="Label" parent="." unique_id=1240357210]
-offset_left = 33.0
-offset_top = 21.0
-offset_right = 443.0
-offset_bottom = 186.0
+[node name="CheckTimer" type="Timer" parent="." unique_id=632201701]
+
+[node name="Time" type="Label" parent="." unique_id=1240357210]
+offset_left = 35.0
+offset_top = 23.0
+offset_right = 445.0
+offset_bottom = 188.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 10
 theme_override_font_sizes/font_size = 120
-text = "DEBUG"
+text = "Time"
+
+[node name="Percent" type="Label" parent="." unique_id=617186032]
+offset_left = 25.0
+offset_top = 161.0
+offset_right = 435.0
+offset_bottom = 326.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 120
+text = "%%"
+
+[connection signal="timeout" from="GameTime" to="." method="_on_game_time_timeout"]
+[connection signal="timeout" from="CheckTimer" to="." method="_on_check_timer_timeout"]

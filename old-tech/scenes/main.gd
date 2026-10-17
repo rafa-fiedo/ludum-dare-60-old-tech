@@ -1,10 +1,33 @@
 extends Node2D
 
+var check_count: float = 0
+var in_checks_count: float = 0
+var percent_store = 1
+
 func _ready() -> void:
 	start_timer()
+	$Time.text = ""
+	$Percent.text = ""
 
-func _physics_process(delta: float) -> void:
-	print($ActionBar.get_is_mouse_inside())
+func _physics_process(_delta: float) -> void:
+	update_debug_texts()
 
 func start_timer() -> void:
-	$Timer.start(10)
+	$GameTime.start(10)
+	$CheckTimer.start(0.2)
+
+func _on_game_time_timeout() -> void:
+	$CheckTimer.stop()
+	
+func _on_check_timer_timeout() -> void:
+	check_count += 1
+	if $ActionBar.get_is_mouse_inside():
+		in_checks_count += 1
+	percent_store = in_checks_count / check_count
+	
+func update_debug_texts() -> void:
+	$Time.text = "%.2f" % $GameTime.time_left
+	$Percent.text = "%.2f" % (percent_store * 100) + "%"
+	
+func round_to_2(value: float) -> float:
+	return round(value * 100.0) / 100.0
