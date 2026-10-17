@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://b5u43vc5imnf6"]
+
+[ext_resource type="Texture2D" uid="uid://b4j7th72s8s1" path="res://assets/drawings/action_bar.png" id="1_bc4oh"]
+[ext_resource type="Script" uid="uid://cf5vxd85fqa1n" path="res://scenes/action_bar.gd" id="1_twh5r"]
+[ext_resource type="Texture2D" uid="uid://6hgsvryp6l4t" path="res://assets/drawings/mouse.png" id="2_ayqex"]
+[ext_resource type="Texture2D" uid="uid://krbbwcgndebj" path="res://assets/drawings/button.png" id="2_t0by0"]
+
+[node name="ActionBar" type="Node2D" unique_id=200632763]
+script = ExtResource("1_twh5r")
+
+[node name="ActionBar" type="Sprite2D" parent="." unique_id=1083294898]
+texture = ExtResource("1_bc4oh")
+
+[node name="Button" type="Sprite2D" parent="." unique_id=835290829]
+position = Vector2(14, -112)
+texture = ExtResource("2_t0by0")
+offset = Vector2(8.18, -182.625)
+
+[node name="TopButton" type="Marker2D" parent="Button" unique_id=1973033502]
+position = Vector2(1, -142)
+
+[node name="BottomButton" type="Marker2D" parent="Button" unique_id=562253340]
+position = Vector2(0, 136)
+
+[node name="Mouse" type="Sprite2D" parent="." unique_id=713513649]
+position = Vector2(19, -129)
+texture = ExtResource("2_ayqex")
+offset = Vector2(10.025, -211.17)
+
+[node name="TopMouse" type="Marker2D" parent="Mouse" unique_id=97282857]
+position = Vector2(-6, -24)
+
+[node name="BottomMouse" type="Marker2D" parent="Mouse" unique_id=1657149514]
+position = Vector2(-5, 16)
+
+[node name="Top" type="Marker2D" parent="." unique_id=2095193504]
+position = Vector2(-8, -419)
+
+[node name="Bottom" type="Marker2D" parent="." unique_id=1525760548]
+position = Vector2(-1, 408)
