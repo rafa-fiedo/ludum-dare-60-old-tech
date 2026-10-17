@@ -29,20 +29,20 @@ one_shot = true
 [node name="CheckTimer" type="Timer" parent="." unique_id=632201701]
 
 [node name="Time" type="Label" parent="." unique_id=1240357210]
-offset_left = 35.0
-offset_top = 23.0
-offset_right = 445.0
-offset_bottom = 188.0
+offset_left = 1569.0
+offset_top = -6.0
+offset_right = 1979.0
+offset_bottom = 159.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 10
 theme_override_font_sizes/font_size = 120
 text = "Time"
 
 [node name="Percent" type="Label" parent="." unique_id=617186032]
-offset_left = 25.0
-offset_top = 161.0
-offset_right = 435.0
-offset_bottom = 326.0
+offset_left = 1492.0
+offset_top = 905.0
+offset_right = 1902.0
+offset_bottom = 1070.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 10
 theme_override_font_sizes/font_size = 120

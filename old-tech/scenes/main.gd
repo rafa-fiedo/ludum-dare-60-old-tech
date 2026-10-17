@@ -4,17 +4,32 @@ var check_count: float = 0
 var in_checks_count: float = 0
 var percent_store = 1
 
+var score_happy: float = 0.8
+var score_normal: float = 0.6
+
 func _ready() -> void:
 	start_timer()
 	$Time.text = ""
 	$Percent.text = ""
 
 func _physics_process(_delta: float) -> void:
+	update_lady_face()
 	update_debug_texts()
 
 func start_timer() -> void:
 	$GameTime.start(10)
 	$CheckTimer.start(0.2)
+
+func update_lady_face() -> void:
+	if percent_store > score_happy:
+		$Lady.use_face_happy()
+		return
+	if percent_store > score_normal:
+		$Lady.use_face_normal()
+		return
+	
+	$Lady.use_face_sad()
+	
 
 func _on_game_time_timeout() -> void:
 	$CheckTimer.stop()

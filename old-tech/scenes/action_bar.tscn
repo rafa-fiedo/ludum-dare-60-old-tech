@@ -12,7 +12,7 @@ script = ExtResource("1_twh5r")
 texture = ExtResource("1_bc4oh")
 
 [node name="Button" type="Sprite2D" parent="." unique_id=835290829]
-position = Vector2(14, -112)
+position = Vector2(-6.1800003, -111.83002)
 texture = ExtResource("2_t0by0")
 offset = Vector2(8.18, -182.625)
 
@@ -23,7 +23,7 @@ position = Vector2(1, -142)
 position = Vector2(0, 136)
 
 [node name="Mouse" type="Sprite2D" parent="." unique_id=713513649]
-position = Vector2(19, -129)
+position = Vector2(-1.1800003, -128.83002)
 texture = ExtResource("2_ayqex")
 offset = Vector2(10.025, -211.17)
 
