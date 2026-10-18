@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dd5i5aj81y26n" path="res://scenes/characters/lady.tscn" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://b5u43vc5imnf6" path="res://scenes/action_bar.tscn" id="3_sugp2"]
 [ext_resource type="Script" uid="uid://tjh1ok02dp6u" path="res://scenes/pause.gd" id="5_tbgi4"]
+[ext_resource type="AudioStream" uid="uid://bu0xbwiu2rshd" path="res://assets/music/2026_10_ludum_dare_60_music-2.mp3" id="6_tefeu"]
 
 [sub_resource type="Animation" id="Animation_tbgi4"]
 resource_name = "PrepareStart"
@@ -232,6 +233,9 @@ offset_right = -23.0
 offset_bottom = 235.0
 theme_override_font_sizes/font_size = 60
 text = "Menu"
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=143381130]
+stream = ExtResource("6_tefeu")
 
 [connection signal="timeout" from="GameTime" to="." method="_on_game_time_timeout"]
 [connection signal="timeout" from="CheckTimer" to="." method="_on_check_timer_timeout"]

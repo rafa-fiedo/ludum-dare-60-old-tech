@@ -8,7 +8,7 @@ var time_update = 0.5
 
 # 100 check and 0.1 check time -> 10sec
 var max_checks = 50
-var min_checks = 20
+var min_checks = 25
 var check_time = 0.1
 
 var score_happy: float = 0.8
@@ -62,6 +62,7 @@ func stop_game():
 	$GameTime.stop()
 	$CheckTimer.stop()
 	$StartTimer/StartTimer.stop()
+	$Music.stop()
 	
 func _on_check_timer_timeout() -> void:
 	var is_inside = $ActionBar.get_is_mouse_inside()
@@ -86,6 +87,7 @@ func update_debug_texts() -> void:
 
 func _on_start_timer_timeout() -> void:
 	start_main_timer()
+	$Music.play()
 	$Time.text = "0.0"
 	$Percent.text = ""
 	
