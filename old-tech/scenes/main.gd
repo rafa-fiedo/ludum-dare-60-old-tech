@@ -66,6 +66,8 @@ func stop_game():
 	$Music.stop()
 	$Lady.stop()
 	
+	$ScoreMenu/Label2.text = "Score: " + str(game_timer)
+	
 func _on_check_timer_timeout() -> void:
 	var is_inside = $ActionBar.get_is_mouse_inside()
 	checks.append(is_inside)
