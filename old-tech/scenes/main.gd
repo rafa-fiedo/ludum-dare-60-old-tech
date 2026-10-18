@@ -33,6 +33,7 @@ func start_main_timer() -> void:
 	$GameTime.start(time_update)
 	$CheckTimer.start(check_time)
 	$ActionBar.start_button()
+	$Lady.start_animation()
 
 func update_lady_face() -> void:
 	if checks.size() < min_checks:
@@ -63,6 +64,7 @@ func stop_game():
 	$CheckTimer.stop()
 	$StartTimer/StartTimer.stop()
 	$Music.stop()
+	$Lady.stop()
 	
 func _on_check_timer_timeout() -> void:
 	var is_inside = $ActionBar.get_is_mouse_inside()

@@ -84,7 +84,7 @@ func setup_button_direction():
 	else:
 		button_direction = -1
 		
-	$ButtonTimer.start(randf_range(0.2, 1.0))
+	$ButtonTimer.start(randf_range(0.2, 0.8))
 
 func _on_button_timer_timeout() -> void:
 	setup_button_direction()

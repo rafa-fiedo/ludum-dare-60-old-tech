@@ -63,3 +63,9 @@ func use_face_sad() -> void:
 func turn_off_faces() -> void:
 	for child in $Face.get_children():
 		child.visible = false
+		
+func start_animation():
+	$AnimationPlayer.play("do")
+	
+func stop():
+	$AnimationPlayer.stop()
