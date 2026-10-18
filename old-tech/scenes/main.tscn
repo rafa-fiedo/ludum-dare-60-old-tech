@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dd5i5aj81y26n" path="res://scenes/characters/lady.tscn" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://b5u43vc5imnf6" path="res://scenes/action_bar.tscn" id="3_sugp2"]
 [ext_resource type="Script" uid="uid://tjh1ok02dp6u" path="res://scenes/pause.gd" id="5_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://w1hfnxpcdash" path="res://assets/drawings/score_screen.png" id="6_o6xl0"]
 [ext_resource type="AudioStream" uid="uid://bu0xbwiu2rshd" path="res://assets/music/2026_10_ludum_dare_60_music-2.mp3" id="6_tefeu"]
 
 [sub_resource type="Animation" id="Animation_tbgi4"]
@@ -136,8 +137,6 @@ font_size = 512
 outline_size = 100
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_oq14g"]
-
 [node name="main" type="Node2D" unique_id=839560685]
 script = ExtResource("1_jyhfs")
 metadata/_edit_vertical_guides_ = [960.0, 640.0, 1280.0, 1620.0]
@@ -172,6 +171,7 @@ text = "Score"
 horizontal_alignment = 1
 
 [node name="Percent" type="Label" parent="." unique_id=617186032]
+visible = false
 offset_left = 35.0
 offset_top = 7.0
 offset_right = 596.0
@@ -200,37 +200,39 @@ vertical_alignment = 1
 
 [node name="ScoreMenu" type="Sprite2D" parent="." unique_id=147238894]
 position = Vector2(964, 590)
-texture = SubResource("NoiseTexture2D_oq14g")
+texture = ExtResource("6_o6xl0")
 
 [node name="Label" type="Label" parent="ScoreMenu" unique_id=1836052419]
-offset_left = -166.99994
-offset_top = -222.0
-offset_right = 174.00006
-offset_bottom = -134.0
-theme_override_font_sizes/font_size = 64
+offset_left = -275.0
+offset_top = -231.0
+offset_right = 256.0
+offset_bottom = -94.0
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 100
 text = "Nice Wash!"
 
 [node name="Label2" type="Label" parent="ScoreMenu" unique_id=1037632561]
-offset_left = -167.0
-offset_top = -106.325
-offset_right = 174.0
-offset_bottom = -18.324997
-theme_override_font_sizes/font_size = 64
+offset_left = -223.0
+offset_top = -74.999985
+offset_right = 192.0
+offset_bottom = 35.000015
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 80
 text = "Score: 90.5"
 
 [node name="Again" type="Button" parent="ScoreMenu" unique_id=1589879598]
-offset_left = 5.0
-offset_top = 112.0
-offset_right = 236.0
-offset_bottom = 231.0
+offset_left = 1.0
+offset_top = 118.0
+offset_right = 232.0
+offset_bottom = 237.0
 theme_override_font_sizes/font_size = 60
 text = "Again!"
 
 [node name="MENU" type="Button" parent="ScoreMenu" unique_id=2047199154]
-offset_left = -236.0
-offset_top = 116.0
-offset_right = -23.0
-offset_bottom = 235.0
+offset_left = -261.0
+offset_top = 118.0
+offset_right = -48.0
+offset_bottom = 237.0
 theme_override_font_sizes/font_size = 60
 text = "Menu"
 

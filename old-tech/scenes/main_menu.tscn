@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://kjbpp1mjiwvq"]
 
 [ext_resource type="Script" uid="uid://m0tocr7n4rm3" path="res://scenes/main_menu.gd" id="1_ekxnf"]
-[ext_resource type="Texture2D" uid="uid://d2216vsfb0b32" path="res://assets/drawings/background.png" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://dg727sxkfewst" path="res://assets/drawings/main_menu.png" id="2_bqqt6"]
 [ext_resource type="AudioStream" uid="uid://bu0xbwiu2rshd" path="res://assets/music/2026_10_ludum_dare_60_music-2.mp3" id="3_bqqt6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_oq14g"]
@@ -13,10 +13,11 @@ outline_color = Color(0, 0, 0, 1)
 script = ExtResource("1_ekxnf")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1512095832]
-texture = ExtResource("1_l6cm7")
+texture = ExtResource("2_bqqt6")
 centered = false
 
 [node name="Label" type="Label" parent="." unique_id=1247314985]
+visible = false
 offset_right = 1918.0
 offset_bottom = 474.0
 text = "OLD LAUNDRY TECH"
@@ -25,10 +26,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Buttons" type="VBoxContainer" parent="." unique_id=1331518523]
-offset_left = 769.0
-offset_top = 492.0
-offset_right = 1123.0
-offset_bottom = 811.0
+offset_left = 253.0
+offset_top = 583.0
+offset_right = 607.0
+offset_bottom = 902.0
+offset_transform_enabled = true
 
 [node name="Start" type="Button" parent="Buttons" unique_id=986394436]
 layout_mode = 2
@@ -80,6 +82,7 @@ size_flags_vertical = 1
 value = 50.0
 
 [node name="Label2" type="Label" parent="." unique_id=1978946887]
+visible = false
 offset_left = 307.0
 offset_top = 868.0
 offset_right = 1609.0
