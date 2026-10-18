@@ -6,6 +6,135 @@
 [ext_resource type="PackedScene" uid="uid://b5u43vc5imnf6" path="res://scenes/action_bar.tscn" id="3_sugp2"]
 [ext_resource type="Script" uid="uid://tjh1ok02dp6u" path="res://scenes/pause.gd" id="5_tbgi4"]
 
+[sub_resource type="Animation" id="Animation_tbgi4"]
+resource_name = "PrepareStart"
+length = 3.0000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StartTimer/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.96666664, 1.9333333, 2.9666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": ["3", "2", "1", "1
+"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StartTimer/Label:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8666667, 0.9979871, 1.8543041, 2, 2.8582602, 2.9656274),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 0), Vector2(1, 1), Vector2(0, 0), Vector2(1, 1), Vector2(0, 0), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StartTimer/Label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.8673358, 0.9995612, 1.8574523, 1.9991224, 2.8536088),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("StartTimer/Label:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.23333333, 0.86050147, 0.9930652, 1.2666667, 1.8489153, 1.9838047, 2.1666667, 2.8419805),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 12.566370614359172, 0.0, 0.0, 12.566370614359172, 0.0, 0.0, 12.566370614359172]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2.9666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"start_main_timer"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_tefeu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StartTimer/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["3"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StartTimer/Label:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StartTimer/Label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("StartTimer/Label:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tefeu"]
+_data = {
+&"PrepareStart": SubResource("Animation_tbgi4"),
+&"RESET": SubResource("Animation_tefeu")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_oq14g"]
+font_size = 512
+outline_size = 100
+outline_color = Color(0, 0, 0, 1)
+
 [node name="main" type="Node2D" unique_id=839560685]
 script = ExtResource("1_jyhfs")
 
@@ -17,36 +146,54 @@ centered = false
 position = Vector2(514, 610)
 
 [node name="ActionBar" parent="." unique_id=200632763 instance=ExtResource("3_sugp2")]
-position = Vector2(996, 507)
+position = Vector2(1527, 569)
 
 [node name="Pause" type="Node2D" parent="." unique_id=1703175321]
 process_mode = 3
 script = ExtResource("5_tbgi4")
 
 [node name="GameTime" type="Timer" parent="." unique_id=1916303493]
-one_shot = true
 
 [node name="CheckTimer" type="Timer" parent="." unique_id=632201701]
 
 [node name="Time" type="Label" parent="." unique_id=1240357210]
-offset_left = 1569.0
-offset_top = -6.0
-offset_right = 1979.0
-offset_bottom = 159.0
+offset_left = 762.0
+offset_top = 23.0
+offset_right = 1172.0
+offset_bottom = 188.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 10
 theme_override_font_sizes/font_size = 120
-text = "Time"
+text = "Score"
+horizontal_alignment = 1
 
 [node name="Percent" type="Label" parent="." unique_id=617186032]
-offset_left = 1492.0
-offset_top = 905.0
-offset_right = 1902.0
-offset_bottom = 1070.0
+offset_left = 35.0
+offset_top = 7.0
+offset_right = 596.0
+offset_bottom = 172.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 10
 theme_override_font_sizes/font_size = 120
 text = "%%"
 
+[node name="StartTimer" type="AnimationPlayer" parent="." unique_id=159834183]
+libraries/ = SubResource("AnimationLibrary_tefeu")
+
+[node name="StartTimer" type="Timer" parent="StartTimer" unique_id=443356180]
+one_shot = true
+
+[node name="Label" type="Label" parent="StartTimer" unique_id=929566761]
+offset_left = 850.0
+offset_top = 146.0
+offset_right = 1143.0
+offset_bottom = 844.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+text = "3"
+label_settings = SubResource("LabelSettings_oq14g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="timeout" from="GameTime" to="." method="_on_game_time_timeout"]
 [connection signal="timeout" from="CheckTimer" to="." method="_on_check_timer_timeout"]
+[connection signal="timeout" from="StartTimer/StartTimer" to="." method="_on_start_timer_timeout"]

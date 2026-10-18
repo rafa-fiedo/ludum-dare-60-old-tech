@@ -38,3 +38,11 @@ position = Vector2(-8, -419)
 
 [node name="Bottom" type="Marker2D" parent="." unique_id=1525760548]
 position = Vector2(-1, 408)
+
+[node name="ButtonTimer" type="Timer" parent="." unique_id=1432300904]
+one_shot = true
+
+[node name="AddDifficultyTimer" type="Timer" parent="." unique_id=1940644293]
+
+[connection signal="timeout" from="ButtonTimer" to="." method="_on_button_timer_timeout"]
+[connection signal="timeout" from="AddDifficultyTimer" to="." method="_on_add_difficulty_timer_timeout"]

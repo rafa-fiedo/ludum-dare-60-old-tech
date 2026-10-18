@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://kjbpp1mjiwvq"]
+
+[ext_resource type="Script" uid="uid://m0tocr7n4rm3" path="res://scenes/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://d2216vsfb0b32" path="res://assets/drawings/background.png" id="1_l6cm7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oq14g"]
+font_size = 120
+outline_size = 30
+outline_color = Color(0, 0, 0, 1)
+
+[node name="MainMenu" type="Node2D" unique_id=2147450584]
+script = ExtResource("1_ekxnf")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1512095832]
+texture = ExtResource("1_l6cm7")
+centered = false
+
+[node name="Label" type="Label" parent="." unique_id=1247314985]
+offset_right = 1918.0
+offset_bottom = 474.0
+text = "OLD LAUNDRY TECH"
+label_settings = SubResource("LabelSettings_oq14g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="." unique_id=1331518523]
+offset_left = 769.0
+offset_top = 492.0
+offset_right = 1123.0
+offset_bottom = 811.0
+
+[node name="Start" type="Button" parent="Buttons" unique_id=986394436]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "START"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Buttons" unique_id=358716534]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Buttons/HBoxContainer" unique_id=1207264517]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "Music  "
+
+[node name="BoxContainer" type="BoxContainer" parent="Buttons/HBoxContainer" unique_id=1546204598]
+custom_minimum_size = Vector2(0, 27.565)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+offset_transform_enabled = true
+
+[node name="MusicScroll" type="HScrollBar" parent="Buttons/HBoxContainer/BoxContainer" unique_id=1729203581]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+value = 50.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Buttons" unique_id=267240284]
+layout_mode = 2
+
+[node name="Sound" type="Label" parent="Buttons/HBoxContainer2" unique_id=1508668795]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "Sound "
+
+[node name="BoxContainer" type="BoxContainer" parent="Buttons/HBoxContainer2" unique_id=1856447188]
+custom_minimum_size = Vector2(0, 27.565)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+offset_transform_enabled = true
+
+[node name="SoundScroll" type="HScrollBar" parent="Buttons/HBoxContainer2/BoxContainer" unique_id=285602799]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+value = 50.0
+
+[node name="Label2" type="Label" parent="." unique_id=1978946887]
+offset_left = 307.0
+offset_top = 868.0
+offset_right = 1609.0
+offset_bottom = 1145.0
+theme_override_font_sizes/font_size = 100
+text = "Add tutorial on left or right
+"
+
+[connection signal="pressed" from="Buttons/Start" to="." method="_on_start_pressed"]
+[connection signal="value_changed" from="Buttons/HBoxContainer/BoxContainer/MusicScroll" to="." method="_on_music_scroll_value_changed"]
+[connection signal="value_changed" from="Buttons/HBoxContainer2/BoxContainer/SoundScroll" to="." method="_on_sound_scroll_value_changed"]
