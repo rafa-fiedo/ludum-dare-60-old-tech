@@ -3,7 +3,8 @@ extends Node2D
 var main_scene = "res://scenes/main.tscn"
 
 func _ready() -> void:
-	pass
+	$Buttons/HBoxContainer/BoxContainer/MusicScroll.value = ProjectControls.get_music_value()
+	$Buttons/HBoxContainer2/BoxContainer/SoundScroll.value = ProjectControls.get_sounds_value()
 
 func _on_start_pressed() -> void:
 	get_tree().change_scene_to_file(main_scene)

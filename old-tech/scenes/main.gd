@@ -8,6 +8,7 @@ var time_update = 0.5
 
 # 100 check and 0.1 check time -> 10sec
 var max_checks = 50
+var min_checks = 20
 var check_time = 0.1
 
 var score_happy: float = 0.8
@@ -34,6 +35,9 @@ func start_main_timer() -> void:
 	$ActionBar.start_button()
 
 func update_lady_face() -> void:
+	if checks.size() < min_checks:
+		return
+		
 	if percent_store > score_happy:
 		$Lady.use_face_happy()
 		return
@@ -43,7 +47,7 @@ func update_lady_face() -> void:
 	
 	$Lady.use_face_sad()
 	
-	if percent_store < score_lose and checks.size() > max_checks - 10:
+	if percent_store < score_lose:
 		is_working = false
 		stop_game()
 

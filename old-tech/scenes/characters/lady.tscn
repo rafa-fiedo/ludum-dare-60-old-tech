@@ -24,3 +24,6 @@ texture = ExtResource("3_fok1r")
 [node name="FaceSad" type="Sprite2D" parent="Face" unique_id=1044645885]
 visible = false
 texture = ExtResource("4_7pf64")
+
+[node name="Sounds" type="AudioStreamPlayer" parent="." unique_id=60729044]
+bus = &"Sound"

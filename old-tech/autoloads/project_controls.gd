@@ -46,6 +46,21 @@ func setup_volume_by_bus_id_and_value(bus_id, value):
 		var volume_db := linear_to_db(value / 100.0)
 		AudioServer.set_bus_volume_db(bus_id, volume_db)
 
+func get_music_value():
+	var bus_id = 1
+	return get_volume_by_bus_id(bus_id)
+	
+func get_sounds_value():
+	var bus_id = 2
+	return get_volume_by_bus_id(bus_id)
+
+func get_volume_by_bus_id(bus_id: int) -> float:
+	if AudioServer.is_bus_mute(bus_id):
+		return 0.0
+	
+	var volume_db = AudioServer.get_bus_volume_db(bus_id)
+	return db_to_linear(volume_db) * 100.0
+
 func set_audio_master(is_on):
 	AudioServer.set_bus_mute(0, not is_on)
 
