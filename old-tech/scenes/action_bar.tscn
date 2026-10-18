@@ -9,6 +9,8 @@
 script = ExtResource("1_twh5r")
 
 [node name="ActionBar" type="Sprite2D" parent="." unique_id=1083294898]
+position = Vector2(0, -62.000004)
+scale = Vector2(1, 1.1390134)
 texture = ExtResource("1_bc4oh")
 
 [node name="Button" type="Sprite2D" parent="." unique_id=835290829]
@@ -34,10 +36,10 @@ position = Vector2(-6, -24)
 position = Vector2(-5, 16)
 
 [node name="Top" type="Marker2D" parent="." unique_id=2095193504]
-position = Vector2(-8, -419)
+position = Vector2(1, -518)
 
 [node name="Bottom" type="Marker2D" parent="." unique_id=1525760548]
-position = Vector2(-1, 408)
+position = Vector2(-4, 395)
 
 [node name="ButtonTimer" type="Timer" parent="." unique_id=1432300904]
 one_shot = true
