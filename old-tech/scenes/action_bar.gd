@@ -1,6 +1,7 @@
 extends Node2D
 
 var vec_mouse_y: float = 0.0
+var is_working = true
 
 var button_speed: float = 10.0
 var button_direction = 0 # 0 is init
@@ -30,6 +31,8 @@ func _input(event: InputEvent) -> void:
 		vec_mouse_y = event.relative.y
 
 func _process(_delta: float) -> void:
+	if not is_working:
+		return
 	move_mouse()
 	
 func _physics_process(_delta: float) -> void:
@@ -90,8 +93,10 @@ func get_random_bool() -> bool:
 	return randi() % 2
 
 func stop_game():
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	$ButtonTimer.stop()
-
+	$AddDifficultyTimer.stop()
+	is_working = false
 
 func _on_add_difficulty_timer_timeout() -> void:
 	raise_difficulty()
@@ -101,4 +106,3 @@ func raise_difficulty():
 	button_speed *= 1.1
 	$Button.scale.y = max(min_button_scale, $Button.scale.y * 0.90)
 	setup_positions()
-	

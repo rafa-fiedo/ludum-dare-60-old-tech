@@ -20,6 +20,7 @@ func _ready() -> void:
 	randomize()
 	$StartTimer.play("PrepareStart")
 	$StartTimer/StartTimer.start(3)
+	$ScoreMenu.visible = false
 
 func _physics_process(_delta: float) -> void:
 	if not is_working:
@@ -43,7 +44,8 @@ func update_lady_face() -> void:
 	$Lady.use_face_sad()
 	
 	if percent_store < score_lose and checks.size() > max_checks - 10:
-		print('you lose')
+		is_working = false
+		stop_game()
 
 func _on_game_time_timeout() -> void:
 	game_timer += $GameTime.wait_time
@@ -51,7 +53,11 @@ func _on_game_time_timeout() -> void:
 	
 func stop_game():
 	is_working = false
+	$ScoreMenu.visible = true
 	$ActionBar.stop_game()
+	$GameTime.stop()
+	$CheckTimer.stop()
+	$StartTimer/StartTimer.stop()
 	
 func _on_check_timer_timeout() -> void:
 	var is_inside = $ActionBar.get_is_mouse_inside()
@@ -81,3 +87,10 @@ func _on_start_timer_timeout() -> void:
 	
 func round_to_2(value: float) -> float:
 	return round(value * 100.0) / 100.0
+
+
+func _on_menu_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+
+func _on_again_pressed() -> void:
+	get_tree().reload_current_scene()

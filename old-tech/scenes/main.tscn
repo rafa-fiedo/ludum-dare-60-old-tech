@@ -135,8 +135,11 @@ font_size = 512
 outline_size = 100
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_oq14g"]
+
 [node name="main" type="Node2D" unique_id=839560685]
 script = ExtResource("1_jyhfs")
+metadata/_edit_vertical_guides_ = [960.0, 640.0, 1280.0, 1620.0]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1205751962]
 texture = ExtResource("1_o5qli")
@@ -146,7 +149,7 @@ centered = false
 position = Vector2(514, 610)
 
 [node name="ActionBar" parent="." unique_id=200632763 instance=ExtResource("3_sugp2")]
-position = Vector2(1527, 569)
+position = Vector2(1388, 599)
 
 [node name="Pause" type="Node2D" parent="." unique_id=1703175321]
 process_mode = 3
@@ -157,10 +160,10 @@ script = ExtResource("5_tbgi4")
 [node name="CheckTimer" type="Timer" parent="." unique_id=632201701]
 
 [node name="Time" type="Label" parent="." unique_id=1240357210]
-offset_left = 762.0
-offset_top = 23.0
-offset_right = 1172.0
-offset_bottom = 188.0
+offset_left = 756.0
+offset_top = 21.0
+offset_right = 1166.0
+offset_bottom = 186.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 10
 theme_override_font_sizes/font_size = 120
@@ -194,6 +197,44 @@ label_settings = SubResource("LabelSettings_oq14g")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ScoreMenu" type="Sprite2D" parent="." unique_id=147238894]
+position = Vector2(964, 590)
+texture = SubResource("NoiseTexture2D_oq14g")
+
+[node name="Label" type="Label" parent="ScoreMenu" unique_id=1836052419]
+offset_left = -166.99994
+offset_top = -222.0
+offset_right = 174.00006
+offset_bottom = -134.0
+theme_override_font_sizes/font_size = 64
+text = "Nice Wash!"
+
+[node name="Label2" type="Label" parent="ScoreMenu" unique_id=1037632561]
+offset_left = -167.0
+offset_top = -106.325
+offset_right = 174.0
+offset_bottom = -18.324997
+theme_override_font_sizes/font_size = 64
+text = "Score: 90.5"
+
+[node name="Again" type="Button" parent="ScoreMenu" unique_id=1589879598]
+offset_left = 5.0
+offset_top = 112.0
+offset_right = 236.0
+offset_bottom = 231.0
+theme_override_font_sizes/font_size = 60
+text = "Again!"
+
+[node name="MENU" type="Button" parent="ScoreMenu" unique_id=2047199154]
+offset_left = -236.0
+offset_top = 116.0
+offset_right = -23.0
+offset_bottom = 235.0
+theme_override_font_sizes/font_size = 60
+text = "Menu"
+
 [connection signal="timeout" from="GameTime" to="." method="_on_game_time_timeout"]
 [connection signal="timeout" from="CheckTimer" to="." method="_on_check_timer_timeout"]
 [connection signal="timeout" from="StartTimer/StartTimer" to="." method="_on_start_timer_timeout"]
+[connection signal="pressed" from="ScoreMenu/Again" to="." method="_on_again_pressed"]
+[connection signal="pressed" from="ScoreMenu/MENU" to="." method="_on_menu_pressed"]
